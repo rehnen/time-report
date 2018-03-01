@@ -1,0 +1,33 @@
+{
+  "name": "time-report",
+  "version": "0.0.1",
+  "description": "Rest interface made in Koa, only to learn Koa",
+  "main": "index.js",
+  "scripts": {
+    "dev": "nodemon index.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/rehnen/time-report.git"
+  },
+  "keywords": [
+    "rest",
+    "koa",
+    "js"
+  ],
+  "author": "rehnen",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/rehnen/time-report/issues"
+  },
+  "homepage": "https://github.com/rehnen/time-report#readme",
+  "devDependencies": {
+    "nodemon": "^1.17.1"
+  },
+  "dependencies": {
+    "koa": "^2.5.0",
+    "koa-json": "^2.0.2",
+    "koa-router": "^7.4.0"
+  }
+}
