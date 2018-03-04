@@ -7,30 +7,24 @@ const app = new Koa();
 const router = new Router();
 
 
-let times = [];
+const times = [];
 
 
-router.get('/', (ctx, next) => {
+router.get('/', (cxt) => {
   // ctx.router available
-  ctx.body = { times };
+  cxt.body = { times };
 });
 
-router.put('/:date', (cxt, next) => {
-  console.log(Object.keys(cxt.request))
-  console.log(cxt.request.body);
-
+router.put('/:date', (cxt) => {
   times.push(cxt.request.body);
-
-
-//  console.log(next);
-  cxt.body = { times }
+  cxt.body = { times };
 });
 
 app.use(json())
   .use(bodyParser({
-      extendTypes: {
-        json: ['application/x-javascript'] // will parse application/x-javascript type body as a JSON string
-      }
+    extendTypes: {
+      json: ['application/x-javascript'],
+    },
   }))
   .use(router.routes())
   .use(router.allowedMethods());
